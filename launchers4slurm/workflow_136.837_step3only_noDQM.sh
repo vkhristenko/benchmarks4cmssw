@@ -60,5 +60,5 @@ echo "process.source.duplicateCheckMode = cms.untracked.string('noDuplicateCheck
 
 # launch the job
 echo "Starting the cmsRun command"
-cmsRun ${CFG} >> $CMSLOG/microbench_${JOBID}_${TASKID}_${ATTEMPTID}_${NTHREADS}.log 2>&1
+cmsRun ${CFG} >> $CMSLOG/benchmark_${JOBID}_${TASKID}_${ATTEMPTID}_${NTHREADS}.log 2>&1
 echo "Finished the cmsRun command"
