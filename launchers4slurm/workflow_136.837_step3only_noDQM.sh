@@ -10,6 +10,15 @@ ATTEMPTID=$6
 NTHREADS=$7
 NEVENTS=$8
 
+echo "CMSDISTR = $CMSDISTR"
+echo "CMSSITECONF = $CMSSITECONF"
+echo "CMSRELEASE = $CMSRELEASE"
+echo "CMSDATA = $CMSDATA"
+echo "CMSLOG = $CMSLOG"
+echo "ATTEMPTID = $ATTEMPTID"
+echo "NTHREADS = $NTHREADS"
+echo "NEVENTS = $NEVENTS"
+
 # set aux variables
 TASKID=$SLURM_PROCID
 JOBID=$SLURM_JOB_ID
@@ -51,5 +60,5 @@ echo "process.source.duplicateCheckMode = cms.untracked.string('noDuplicateCheck
 
 # launch the job
 echo "Starting the cmsRun command"
-cmsRun ${CFG} >> $LOGDIR/microbench_${JOBID}_${TASKID}_${ATTEMPTID}_${NTHREADS}.log 2>&1
+cmsRun ${CFG} >> $CMSLOG/microbench_${JOBID}_${TASKID}_${ATTEMPTID}_${NTHREADS}.log 2>&1
 echo "Finished the cmsRun command"
